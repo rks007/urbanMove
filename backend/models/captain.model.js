@@ -42,7 +42,7 @@ const captainSchema = new mongoose.Schema({
         plate: {
             type: String,
             required: true,
-            minlength: [3, 'Plate must be at least 3 characters long']
+            minlength: [9, 'Plate must be at least 3 characters long']
         },
         capacity: {
             type: Number,
@@ -78,6 +78,6 @@ captainSchema.statics.hashPassword = async function(password){
     return await bcrypt.hash(password, 10); 
 }
 
-const captainModel = mongoose.model('captain', captainSchema); //1
+const captainModel = mongoose.model('captain', captainSchema); 
 
-module.exports = captainModel; //17
+module.exports = captainModel; 
